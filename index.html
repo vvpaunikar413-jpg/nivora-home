@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover thoughtfully chosen home decor, decorative objects, lighting and beautiful little details for your home at Nivora Home.">
+  <title>Nivora Home | Thoughtful Decor. Beautiful Living.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --olive: #82856B;
+      --olive-dark: #666A50;
+      --cream: #F7F5EF;
+      --paper: #FFFFFF;
+      --ink: #292B24;
+      --muted: #77796F;
+      --border: #E8E5DC;
+      --terracotta: #B8755A;
+      --radius: 4px;
+      --shadow: 0 12px 40px rgba(41, 43, 36, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    button, input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .announcement {
+      background: var(--olive);
+      color: white;
+      padding: 9px 16px;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-main {
+      max-width: 1320px;
+      margin: auto;
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 28px;
+      line-height: 1.1;
+      letter-spacing: 1.2px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      color: var(--olive);
+      font-size: 9px;
+      letter-spacing: 4.5px;
+      text-align: center;
+      margin-top: 6px;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 13px;
+    }
+
+    .nav a {
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--olive);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .icon-button {
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font-size: 21px;
+      position: relative;
+      padding: 5px;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -3px;
+      right: -6px;
+      background: var(--olive);
+      color: white;
+      font-size: 10px;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+    }
+
+    .menu-button {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 25px;
+    }
+
+    .hero {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      min-height: 520px;
+    }
+
+    .hero-content {
+      padding: 80px 9% 75px max(9%, calc((100vw - 1320px) / 2));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 2.8px;
+      color: var(--olive-dark);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 500;
+    }
+
+    h1, .section-title, .editorial-title {
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+    h1 {
+      font-size: clamp(42px, 5vw, 70px);
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      max-width: 530px;
+    }
+
+    .hero-content p {
+      color: #65665E;
+      font-size: 15px;
+      max-width: 390px;
+      margin: 23px 0 30px;
+      line-height: 1.9;
+    }
+
+    .button {
+      background: var(--olive);
+      color: white;
+      padding: 14px 25px;
+      border: 1px solid var(--olive);
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--olive-dark);
+      border-color: var(--olive-dark);
+      transform: translateY(-1px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--border);
+    }
+
+    .button-outline:hover {
+      color: white;
+    }
+
+    .hero-image {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+      background: #ded8cb;
+    }
+
+    .hero-image img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      transition: transform 0.8s ease;
+    }
+
+    .hero-image:hover img {
+      transform: scale(1.025);
+    }
+
+    .hero-label {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      background: rgba(255, 255, 255, 0.93);
+      padding: 14px 19px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 80px 5%;
+    }
+
+    .section-inner {
+      max-width: 1320px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 3.5vw, 42px);
+      line-height: 1.25;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .category-card {
+      border: 0;
+      background: var(--cream);
+      text-align: left;
+      overflow: hidden;
+      color: var(--ink);
+    }
+
+    .category-card img {
+      aspect-ratio: 4 / 4.5;
+      transition: transform 0.5s ease;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .category-image {
+      overflow: hidden;
+      background: #ede8dd;
+    }
+
+    .category-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 14px;
+      background: var(--cream);
+    }
+
+    .category-info strong {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .category-info span {
+      color: var(--olive);
+      font-size: 18px;
+    }
+
+    .products-section {
+      background: #FBFAF7;
+    }
+
+    .shop-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .filter-list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-button {
+      border: 1px solid var(--border);
+      background: white;
+      padding: 9px 14px;
+      border-radius: 30px;
+      color: var(--muted);
+      font-size: 11px;
+      transition: 0.2s ease;
+    }
+
+    .filter-button.active,
+    .filter-button:hover {
+      background: var(--olive);
+      color: white;
+      border-color: var(--olive);
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      background: white;
+      padding: 10px 13px;
+      min-width: 220px;
+    }
+
+    .search-box span {
+      font-size: 17px;
+    }
+
+    .search-box input {
+      width: 100%;
+      min-width: 0;
+      outline: none;
+      border: 0;
+      background: transparent;
+      font-size: 12px;
+      color: var(--ink);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 27px 18px;
+    }
+
+    .product-card {
+      min-width: 0;
+    }
+
+    .product-image-wrap {
+      position: relative;
+      overflow: hidden;
+      background: #F0EDE5;
+    }
+
+    .product-image {
+      aspect-ratio: 4 / 4.6;
+      transition: transform 0.45s ease;
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.035);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 1;
+      background: white;
+      padding: 5px 9px;
+      color: var(--olive-dark);
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .quick-add {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      border: 0;
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--ink);
+      padding: 12px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: 0.25s ease;
+    }
+
+    .product-card:hover .quick-add,
+    .quick-add:focus {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .product-info {
+      padding-top: 13px;
+    }
+
+    .product-category {
+      color: var(--muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+    }
+
+    .product-name {
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .mobile-add {
+      display: none;
+      border: 1px solid var(--olive);
+      color: var(--olive-dark);
+      background: transparent;
+      padding: 6px 10px;
+      font-size: 11px;
+    }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: var(--muted);
+      padding: 50px 10px;
+    }
+
+    .editorial {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 7%;
+      background: var(--cream);
+    }
+
+    .editorial-image img {
+      aspect-ratio: 5 / 4;
+    }
+
+    .editorial-content {
+      padding: 30px 0;
+      max-width: 490px;
+    }
+
+    .editorial-title {
+      font-size: clamp(32px, 4vw, 49px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .editorial-content p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .benefit {
+      text-align: center;
+      padding: 16px;
+    }
+
+    .benefit-icon {
+      font-size: 28px;
+      color: var(--olive);
+      margin-bottom: 13px;
+    }
+
+    .benefit h3 {
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    .benefit p {
+      max-width: 260px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .newsletter {
+      background: var(--olive);
+      color: white;
+      padding: 65px 5%;
+      text-align: center;
+    }
+
+    .newsletter .eyebrow {
+      color: #F3F0E5;
+    }
+
+    .newsletter .section-title {
+      font-size: clamp(29px, 4vw, 39px);
+    }
+
+    .newsletter p {
+      margin: 12px 0 24px;
+      font-size: 13px;
+      color: #F2F0E8;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 450px;
+      margin: auto;
+      gap: 0;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      min-width: 0;
+      padding: 14px;
+      border: 1px solid white;
+      outline: none;
+      background: white;
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    .newsletter-form button {
+      padding: 14px 18px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: white;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      background: #292B24;
+      color: #F6F4ED;
+      padding: 55px 5% 25px;
+    }
+
+    .footer-inner {
+      max-width: 1320px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer .brand {
+      display: inline-block;
+      font-size: 25px;
+    }
+
+    .footer .brand span {
+      color: #C7C8B8;
+    }
+
+    .footer-about {
+      max-width: 300px;
+      color: #BEBFB5;
+      font-size: 12px;
+      margin-top: 18px;
+      line-height: 1.9;
+    }
+
+    .footer h3 {
+      font-family: "DM Sans", sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .footer-links a,
+    .footer-links button {
+      width: fit-content;
+      color: #BEBFB5;
+      background: none;
+      border: 0;
+      text-align: left;
+      font-size: 12px;
+    }
+
+    .footer-links a:hover,
+    .footer-links button:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      max-width: 1320px;
+      margin: 40px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #494B42;
+      color: #BEBFB5;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(20, 21, 17, 0.48);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.25s ease;
+    }
+
+    .overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(430px, 100%);
+      height: 100%;
+      background: white;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .overlay.open .cart-drawer {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-header h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 25px;
+    }
+
+    .close-button {
+      border: 0;
+      background: transparent;
+      font-size: 26px;
+      color: var(--ink);
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px 0;
+    }
+
+    .cart-empty {
+      color: var(--muted);
+      font-size: 13px;
+      padding: 35px 0;
+      text-align: center;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 75px 1fr auto;
+      gap: 13px;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item img {
+      width: 75px;
+      height: 85px;
+    }
+
+    .cart-item-name {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .cart-item-price {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 9px;
+    }
+
+    .quantity-control button {
+      width: 25px;
+      height: 25px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+    }
+
+    .quantity-control span {
+      font-size: 12px;
+    }
+
+    .remove-item {
+      display: block;
+      margin-top: 5px;
+      border: 0;
+      background: none;
+      color: var(--muted);
+      text-decoration: underline;
+      font-size: 10px;
+    }
+
+    .cart-summary {
+      border-top: 1px solid var(--border);
+      padding-top: 19px;
+    }
+
+    .summary-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+
+    .summary-total {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .cart-summary .button {
+      width: 100%;
+      margin-top: 7px;
+    }
+
+    .cart-note {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      z-index: 70;
+      transform: translate(-50%, 20px);
+      padding: 13px 20px;
+      background: var(--ink);
+      color: white;
+      font-size: 12px;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.25s ease;
+      box-shadow: var(--shadow);
+      max-width: calc(100% - 30px);
+      text-align: center;
+    }
+
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, 0);
+    }
+
+    @media (max-width: 1000px) {
+      .nav {
+        gap: 16px;
+      }
+
+      .header-main {
+        padding: 16px 4%;
+      }
+
+      .brand {
+        font-size: 24px;
+      }
+
+      .hero-content {
+        padding: 55px 7%;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .categories {
+        gap: 13px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1.4fr 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .announcement {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .header-main {
+        padding: 14px 5%;
+        gap: 10px;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .brand span {
+        font-size: 8px;
+        letter-spacing: 3px;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 22px 5%;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .header-actions {
+        gap: 10px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        padding: 56px 7% 42px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 11vw, 60px);
+      }
+
+      .hero-content p {
+        font-size: 13px;
+      }
+
+      .hero-image {
+        min-height: 310px;
+      }
+
+      .section {
+        padding: 58px 5%;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 13px;
+      }
+
+      .category-info {
+        padding: 12px 10px;
+      }
+
+      .category-info strong {
+        font-size: 12px;
+      }
+
+      .shop-toolbar {
+        align-items: stretch;
+      }
+
+      .filter-list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px;
+      }
+
+      .filter-button {
+        white-space: nowrap;
+      }
+
+      .search-box {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 12px;
+      }
+
+      .product-name {
+        font-size: 12px;
+      }
+
+      .product-price {
+        font-size: 13px;
+      }
+
+      .quick-add {
+        display: none;
+      }
+
+      .mobile-add {
+        display: block;
+      }
+
+      .product-tag {
+        top: 8px;
+        left: 8px;
+        padding: 4px 6px;
+        font-size: 8px;
+      }
+
+      .editorial {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .editorial-content {
+        padding: 0;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .newsletter {
+        padding: 55px 5%;
+      }
+
+      .newsletter-form button {
+        padding: 12px;
+        font-size: 9px;
+      }
+
+      .footer-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 22px;
+      }
+
+      .footer-brand-section {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 7px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement">
+    Thoughtful decor. Beautiful living. Welcome to Nivora Home.
+  </div>
+
+  <header class="header">
+    <div class="header-main">
+      <button class="menu-button" id="menuButton" aria-label="Open navigation">☰</button>
+
+      <a class="brand" href="#home" aria-label="Nivora Home homepage">
+        NIVORA HOME
+        <span>Thoughtful Living</span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#categories">Collections</a>
+        <a href="#shop">Shop All</a>
+        <a href="#story">Our Philosophy</a>
+        <a href="#footer">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" id="searchButton" aria-label="Search products">⌕</button>
+        <button class="icon-button" id="cartButton" aria-label="Open shopping cart">
+          ♡
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Make yourself at home</div>
+        <h1>Little details.<br>Beautiful living.</h1>
+        <p>
+          Thoughtfully chosen pieces that bring warmth, character and a
+          little everyday magic to your space.
+        </p>
+        <a class="button" href="#shop">Explore the collection <span>→</span></a>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85"
+          alt="Warm, modern living room with carefully styled home decor"
+          onerror="this.style.display='none'"
+        >
+        <div class="hero-label">A home that feels like you</div>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="eyebrow">Find your favourites</div>
+          <h2 class="section-title">Shop by collection</h2>
+          <p class="section-subtitle">Small changes can make a space feel entirely new.</p>
+        </div>
+
+        <div class="categories">
+          <button class="category-card" data-pick-category="Vases">
+            <div class="category-image">
+              <img loading="lazy"
+                src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=650&q=80"
+                alt="Ceramic vases and decorative pottery"
+                onerror="this.style.display='none'"
+              >
+            </div>
+            <div class="category-info"><strong>Vases & Pottery</strong><span>↗</span></div>
+          </button>
+
+          <button class="category-card" data-pick-category="Wall Art">
+            <div class="category-image">
+              <img loading="lazy"
+                src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=650&q=80"
+                alt="Art for a thoughtfully styled interior"
+                onerror="this.style.display='none'"
+              >
+            </div>
+            <div class="category-info"><strong>Wall Art</strong><span>↗</span></div>
+          </button>
+
+          <button class="category-card" data-pick-category="Lighting">
+            <div class="category-image">
+              <img loading="lazy"
+                src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=650&q=80"
+                alt="Warm decorative table lighting"
+                onerror="this.style.display='none'"
+              >
+            </div>
+            <div class="category-info"><strong>Lighting</strong><span>↗</span></div>
+          </button>
+
+          <button class="category-card" data-pick-category="Decor Objects">
+            <div class="category-image">
+              <img loading="lazy"
+                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=650&q=80"
+                alt="Decorative objects styled in a modern home"
+                onerror="this.style.display='none'"
+              >
+            </div>
+            <div class="category-info"><strong>Decor Objects</strong><span>↗</span></div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products-section" id="shop">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="eyebrow">Considered pieces for everyday spaces</div>
+          <h2 class="section-title">The Nivora edit</h2>
+          <p class="section-subtitle">Explore our sample collection of home decor favourites.</p>
+        </div>
+
+        <div class="shop-toolbar">
+          <div class="filter-list" id="filterList">
+            <button class="filter-button active" data-filter="All">All pieces</button>
+            <button class="filter-button" data-filter="Vases">Vases</button>
+            <button class="filter-button" data-filter="Wall Art">Wall Art</button>
+            <button class="filter-button" data-filter="Lighting">Lighting</button>
+            <button class="filter-button" data-filter="Decor Objects">Decor Objects</button>
+          </div>
+
+          <label class="search-box" id="searchBox">
+            <span>⌕</span>
+            <input type="search" id="productSearch" placeholder="Find something lovely..." aria-label="Search products">
+          </label>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="section editorial" id="story">
+      <div class="section-inner editorial">
+        <div class="editorial-image">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1100&q=85"
+            alt="Calm, natural-toned living space"
+            onerror="this.style.display='none'"
+          >
+        </div>
+        <div class="editorial-content">
+          <div class="eyebrow">The Nivora philosophy</div>
+          <h2 class="editorial-title">Your home should feel like your story.</h2>
+          <p>
+            We believe a beautiful home is not about filling every corner.
+            It is about choosing the right details, bringing together
+            textures you love, and creating a space that feels unmistakably yours.
+          </p>
+          <a class="button button-outline" href="#shop">Discover our pieces <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="eyebrow">A little more thought in every detail</div>
+          <h2 class="section-title">The Nivora difference</h2>
+        </div>
+
+        <div class="benefits">
+          <div class="benefit">
+            <div class="benefit-icon">✳</div>
+            <h3>Considered Design</h3>
+            <p>Timeless inspiration for spaces that reflect your personality.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">⌂</div>
+            <h3>Made for Everyday Living</h3>
+            <p>Ideas and accents to help make your everyday surroundings feel special.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">♡</div>
+            <h3>Chosen with Care</h3>
+            <p>A growing collection guided by warmth, simplicity and character.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="eyebrow">A note from Nivora</div>
+      <h2 class="section-title">Make room for inspiration.</h2>
+      <p>Join our list for decor ideas, styling inspiration and collection updates.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" id="newsletterEmail" placeholder="Your email address" aria-label="Your email address" required>
+        <button type="submit">Sign me up</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand-section">
+        <a class="brand" href="#home">
+          NIVORA HOME
+          <span>Thoughtful Living</span>
+        </a>
+        <p class="footer-about">
+          A home decor concept inspired by warm textures, thoughtful details
+          and the little things that make a space your own.
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <div class="footer-links">
+          <a href="#shop">Shop all</a>
+          <a href="#categories">Collections</a>
+          <a href="#story">Our philosophy</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Help</h3>
+        <div class="footer-links">
+          <a href="#footer" id="contactLink">Contact us</a>
+          <button type="button" id="shippingLink">Shipping information</button>
+          <button type="button" id="returnsLink">Returns information</button>
+        </div>
+      </div>
+
+      <div>
+        <h3>Follow along</h3>
+        <div class="footer-links">
+          <button type="button" id="instagramLink">Instagram</button>
+          <a href="#newsletterForm">Join our mailing list</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Nivora Home. All rights reserved.</span>
+      <span>A home decor concept in the making.</span>
+    </div>
+  </footer>
+
+  <div class="overlay" id="cartOverlay" aria-hidden="true">
+    <aside class="cart-drawer" role="dialog" aria-modal="true" aria-label="Your shopping cart">
+      <div class="cart-header">
+        <h2>Your bag (<span id="cartHeadingCount">0</span>)</h2>
+        <button class="close-button" id="closeCart" aria-label="Close shopping cart">×</button>
+      </div>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">₹0</span>
+        </div>
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+        <button class="button" id="checkoutButton">Continue to order →</button>
+        <p class="cart-note">Sample-store checkout. Payment and delivery are not configured yet.</p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // SAMPLE PRODUCTS: Replace these with your real products before selling.
+    const products = [
+      {
+        id: 1,
+        name: "Sculpted Ceramic Vase",
+        category: "Vases",
+        price: 799,
+        tag: "Bestseller",
+        image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 2,
+        name: "Abstract Wall Art",
+        category: "Wall Art",
+        price: 1299,
+        tag: "New",
+        image: "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 3,
+        name: "Warm Glow Table Lamp",
+        category: "Lighting",
+        price: 1499,
+        tag: "",
+        image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 4,
+        name: "Modern Accent Sculpture",
+        category: "Decor Objects",
+        price: 899,
+        tag: "",
+        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 5,
+        name: "Minimalist Ceramic Pot",
+        category: "Vases",
+        price: 649,
+        tag: "Popular",
+        image: "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 6,
+        name: "Natural Texture Wall Print",
+        category: "Wall Art",
+        price: 999,
+        tag: "",
+        image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 7,
+        name: "Ambient Bedside Light",
+        category: "Lighting",
+        price: 1199,
+        tag: "New",
+        image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 8,
+        name: "Decorative Shelf Accent",
+        category: "Decor Objects",
+        price: 549,
+        tag: "",
+        image: "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=700&q=80"
+      }
+    ];
+
+    // Add your business WhatsApp number here later, including country code.
+    // Example format for India: 91 followed by the 10-digit mobile number.
+    // Do not include +, spaces or dashes. Leave blank until ready.
+    const WHATSAPP_NUMBER = "";
+
+    let activeCategory = "All";
+    let cart = [];
+
+    const productGrid = document.getElementById("productGrid");
+    const productSearch = document.getElementById("productSearch");
+    const cartOverlay = document.getElementById("cartOverlay");
+    const toast = document.getElementById("toast");
+    let toastTimer;
+
+    function money(amount) {
+      return "₹" + amount.toLocaleString("en-IN");
+    }
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, function(character) {
+        return {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;"
+        }[character];
+      });
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
+    }
+
+    function renderProducts() {
+      const query = productSearch.value.trim().toLowerCase();
+
+      const filtered = products.filter(product => {
+        const matchesCategory =
+          activeCategory === "All" || product.category === activeCategory;
+        const matchesSearch =
+          product.name.toLowerCase().includes(query) ||
+          product.category.toLowerCase().includes(query);
+
+        return matchesCategory && matchesSearch;
+      });
+
+      document.querySelectorAll(".filter-button").forEach(button => {
+        button.classList.toggle("active", button.dataset.filter === activeCategory);
+      });
+
+      if (filtered.length === 0) {
+        productGrid.innerHTML =
+          '<div class="no-results">No matching pieces found. Try another search.</div>';
+        return;
+      }
+
+      productGrid.innerHTML = filtered.map(product => `
+        <article class="product-card">
+          <div class="product-image-wrap">
+            ${product.tag ? `<span class="product-tag">${escapeHTML(product.tag)}</span>` : ""}
+            <img
+              class="product-image"
+              src="${product.image}"
+              alt="${escapeHTML(product.name)}"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
+            <button class="quick-add" data-add="${product.id}">Add to bag +</button>
+          </div>
+          <div class="product-info">
+            <div class="product-category">${escapeHTML(product.category)}</div>
+            <div class="product-name">${escapeHTML(product.name)}</div>
+            <div class="product-bottom">
+              <span class="product-price">${money(product.price)}</span>
+              <button class="mobile-add" data-add="${product.id}">Add +</button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function addToCart(productId) {
+      const product = products.find(item => item.id === productId);
+      if (!product) return;
+
+      const existing = cart.find(item => item.id === productId);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+
+      renderCart();
+      showToast(product.name + " added to your bag.");
+    }
+
+    function changeQuantity(productId, amount) {
+      const item = cart.find(product => product.id === productId);
+      if (!item) return;
+
+      item.quantity += amount;
+
+      if (item.quantity <= 0) {
+        cart = cart.filter(product => product.id !== productId);
+      }
+
+      renderCart();
+    }
+
+    function removeFromCart(productId) {
+      cart = cart.filter(product => product.id !== productId);
+      renderCart();
+    }
+
+    function renderCart() {
+      const count = cart.reduce((total, item) => total + item.quantity, 0);
+      const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+
+      document.getElementById("cartCount").textContent = count;
+      document.getElementById("cartHeadingCount").textContent = count;
+      document.getElementById("cartSubtotal").textContent = money(subtotal);
+      document.getElementById("cartTotal").textContent = money(subtotal);
+
+      const cartItems = document.getElementById("cartItems");
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="cart-empty">
+            Your bag is waiting for something lovely.<br><br>
+            Add a few favourites to get started.
+          </div>`;
+        return;
+      }
+
+      cartItems.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${escapeHTML(item.name)}" onerror="this.style.display='none'">
+          <div>
+            <div class="cart-item-name">${escapeHTML(item.name)}</div>
+            <div class="cart-item-price">${money(item.price)} each</div>
+            <div class="quantity-control">
+              <button data-quantity="${item.id}" data-change="-1" aria-label="Decrease quantity">−</button>
+              <span>${item.quantity}</span>
+              <button data-quantity="${item.id}" data-change="1" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="remove-item" data-remove="${item.id}">Remove</button>
+          </div>
+          <strong style="font-size:12px">${money(item.price * item.quantity)}</strong>
+        </div>
+      `).join("");
+    }
+
+    function openCart() {
+      cartOverlay.classList.add("open");
+      cartOverlay.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      document.getElementById("closeCart").focus();
+    }
+
+    function closeCart() {
+      cartOverlay.classList.remove("open");
+      cartOverlay.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("click", event => {
+      const addButton = event.target.closest("[data-add]");
+      if (addButton) {
+        addToCart(Number(addButton.dataset.add));
+      }
+
+      const filterButton = event.target.closest("[data-filter]");
+      if (filterButton) {
+        activeCategory = filterButton.dataset.filter;
+        renderProducts();
+      }
+
+      const categoryButton = event.target.closest("[data-pick-category]");
+      if (categoryButton) {
+        activeCategory = categoryButton.dataset.pickCategory;
+        renderProducts();
+        document.getElementById("shop").scrollIntoView({ behavior: "smooth" });
+      }
+
+      const quantityButton = event.target.closest("[data-quantity]");
+      if (quantityButton) {
+        changeQuantity(
+          Number(quantityButton.dataset.quantity),
+          Number(quantityButton.dataset.change)
+        );
+      }
+
+      const removeButton = event.target.closest("[data-remove]");
+      if (removeButton) {
+        removeFromCart(Number(removeButton.dataset.remove));
+      }
+    });
+
+    productSearch.addEventListener("input", renderProducts);
+
+    document.getElementById("searchButton").addEventListener("click", () => {
+      document.getElementById("shop").scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => productSearch.focus(), 350);
+    });
+
+    document.getElementById("cartButton").addEventListener("click", openCart);
+    document.getElementById("closeCart").addEventListener("click", closeCart);
+
+    cartOverlay.addEventListener("click", event => {
+      if (event.target === cartOverlay) closeCart();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeCart();
+    });
+
+    document.getElementById("menuButton").addEventListener("click", () => {
+      const nav = document.getElementById("mainNav");
+      nav.classList.toggle("open");
+      const isOpen = nav.classList.contains("open");
+      document.getElementById("menuButton").setAttribute("aria-expanded", isOpen);
+    });
+
+    document.querySelectorAll("#mainNav a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("mainNav").classList.remove("open");
+      });
+    });
+
+    document.getElementById("checkoutButton").addEventListener("click", () => {
+      if (cart.length === 0) {
+        showToast("Your bag is empty. Add a product first.");
+        return;
+      }
+
+      if (!WHATSAPP_NUMBER) {
+        alert(
+          "Your sample cart is working! Before taking real orders, we need to add your business WhatsApp number and confirm your real products, prices and delivery process. No payment has been collected."
+        );
+        return;
+      }
+
+      const lines = cart.map(item =>
+        `${item.name} x ${item.quantity} — ${money(item.price * item.quantity)}`
+      );
+
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const message =
+        "Hello Nivora Home! I'd like to enquire about this order:\n\n" +
+        lines.join("\n") +
+        "\n\nTotal: " + money(total) +
+        "\nPlease confirm availability, delivery charges and payment options.";
+
+      window.open(
+        "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message),
+        "_blank",
+        "noopener"
+      );
+    });
+
+    document.getElementById("newsletterForm").addEventListener("submit", event => {
+      event.preventDefault();
+      showToast("This demo form is not connected to an email service yet.");
+      document.getElementById("newsletterEmail").value = "";
+    });
+
+    document.getElementById("shippingLink").addEventListener("click", () => {
+      alert("Shipping policies will be added after your delivery method and charges are decided.");
+    });
+
+    document.getElementById("returnsLink").addEventListener("click", () => {
+      alert("A returns policy will be added before the store accepts real orders.");
+    });
+
+    document.getElementById("instagramLink").addEventListener("click", () => {
+      alert("Your Instagram link can be added here once you create your business account.");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
